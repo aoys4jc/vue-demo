@@ -1,11 +1,12 @@
 const path = require('path')
 const webpack = require('webpack')
+const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
   entry: './src/main.js',
   output: {
     path: path.resolve(__dirname, './dist'),
-    publicPath: '/dist/',
+    publicPath: './dist/',
     filename: 'build.js'
   },
   module: {
@@ -24,13 +25,16 @@ module.exports = {
       },
       {
         test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
-        loader: 'file-loader'       
+        loader: 'file-loader',
+        options: {
+          name: 'assets/[name].[ext]?[hash]'
+        }       
       },
       {
         test: /\.(png|jpg|gif|svg)$/,
         loader: 'file-loader',
         options: {
-          name: '[name].[ext]?[hash]'
+          name: 'assets/[name].[ext]?[hash]'
         }
       }
     ]
@@ -44,7 +48,8 @@ module.exports = {
   devServer: {
     historyApiFallback: true,
     noInfo: true,
-    overlay: true
+    overlay: true,
+    inline: true//实时刷新
   },
   performance: {
     hints: false
@@ -69,6 +74,11 @@ if (process.env.NODE_ENV === 'production') {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new CleanWebpackPlugin('dist/*', {
+      root: __dirname,
+      verbose: true,
+      dry: false
+  })
   ])
 }
