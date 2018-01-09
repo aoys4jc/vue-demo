@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "element-ui": "^2.0.9",
+    "mint-ui": "^2.2.13",
     "vue": "^2.5.11"
   },
   "browserslist": [
