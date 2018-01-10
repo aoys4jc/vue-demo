@@ -6,6 +6,7 @@ import 'mint-ui/lib/style.css'
 import App from './App.vue'
 import CustomCascader from './Cascader.vue'
 import CustomTimePicker from './TimePicker.vue'
+import CustomButton from './Button.vue'
 
 Vue.use(ElementUI)
 Vue.use(MintUI)
@@ -15,6 +16,7 @@ new Vue({
   components:{
     'custom-app':App,
     'custom-cascader':CustomCascader,
-    'custom-time':CustomTimePicker
+    'custom-time':CustomTimePicker,
+    'custom-button':CustomButton
   }
 })
