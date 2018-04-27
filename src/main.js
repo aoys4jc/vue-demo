@@ -89,13 +89,13 @@ const app = new Vue({
   store,
 }).$mount('#app')
 
-new Vue({
-  el: '#app',
-  components:{
-    'custom-app':App,
-    'custom-cascader':CustomCascader,
-    'custom-time':CustomTimePicker,
-    'custom-button':CustomButton,
-    'custom-buttom-nav':CustomBottomNav
-  }
-})
+// new Vue({
+//   el: '#app',
+//   components:{
+//     'custom-app':App,
+//     'custom-cascader':CustomCascader,
+//     'custom-time':CustomTimePicker,
+//     'custom-button':CustomButton,
+//     'custom-buttom-nav':CustomBottomNav
+//   }
+// })
