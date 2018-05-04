@@ -6,11 +6,6 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import App from './App.vue'
-import CustomCascader from './Cascader.vue'
-import CustomTimePicker from './TimePicker.vue'
-import CustomButton from './Button.vue'
-import CustomBottomNav from './BottomNav.vue'
 
 Vue.use(ElementUI)
 Vue.use(MintUI)
@@ -18,6 +13,19 @@ Vue.use(Vuex);
 Vue.use(require('vue-resource'));//引用ajax库
 Vue.use(VueRouter);
 
+import App from '../components/App.vue'
+import CustomCascader from '../components/Cascader.vue'
+import CustomTimePicker from '../components/TimePicker.vue'
+import CustomButton from '../components/Button.vue'
+import CustomBottomNav from '../components/BottomNav.vue'
+
+import Ticket from "../Ticket.vue";
+import DownloadApp from "../components/DownloadApp.vue";
+import TicketBody from "../components/TicketBody.vue";
+import TicketStartCity from "../components/TicketStartCity.vue";
+import TicketEndCity from "../components/TicketEndCity.vue";
+import TicketResult from "../components/TicketResult.vue";
+import TicketPay from "../components/TicketPay.vue";
 
 const routes = [{
 	path: '/',
