@@ -1,7 +1,7 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import * as actions from './action';
-import * as getters from './getters';//获取数据的通用函数(进行处理)
+import * as getters from './getter';//获取数据的通用函数(进行处理)
 import apiRequest from './modules/apiRequest.js';
 
 Vue.use(Vuex);

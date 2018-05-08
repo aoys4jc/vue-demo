@@ -19,7 +19,7 @@ import CustomTimePicker from '../components/TimePicker.vue'
 import CustomButton from '../components/Button.vue'
 import CustomBottomNav from '../components/BottomNav.vue'
 
-import Ticket from "../Ticket.vue";
+import Ticket from "../components/Ticket.vue";
 import DownloadApp from "../components/DownloadApp.vue";
 import TicketBody from "../components/TicketBody.vue";
 import TicketStartCity from "../components/TicketStartCity.vue";
