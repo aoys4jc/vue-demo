@@ -1,32 +1,43 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+    <mt-header fixed title="标题">
+      <router-link to="/" slot="left">
+        <mt-button icon="back"></mt-button>
+        <mt-button @click="handleClose">关闭</mt-button>
+      </router-link>
+      <mt-button icon="more" slot="right"></mt-button>
+    </mt-header>
+    <h3>{{ msg }}</h3>
     <ul>
       <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
-      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
-      <li><a href="https://chat.vuejs.org" target="_blank">Community Chat</a></li>
-      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
-    </ul>
-    <h2>Ecosystem</h2>
-    <ul>
       <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
       <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
       <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
       <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
     </ul>
-  </div>
+    <div class="body">
+			<transition 
+			enter-active-class="fadeIn"
+			leave-active-class="fadeOut">
+				<router-view></router-view>
+			</transition>
+    </div>
+    <custom-bottomnav></custom-bottomnav>
+  </div>  
 </template>
 
-<script>
+<script type="text/babel">
+import CustomBottomNav from '../components/BottomNav.vue'
 export default {
   name: 'app',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App'
+      msg: 'Aoys的博客'
     }
-  }
+  },
+  components:{
+		"custom-bottomnav":CustomBottomNav,
+	}
 }
 </script>
 
@@ -36,8 +47,7 @@ export default {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  padding: 30px 0 0 0;
 }
 
 h1, h2 {
@@ -54,7 +64,4 @@ li {
   margin: 0 10px;
 }
 
-a {
-  color: #42b983;
-}
 </style>
